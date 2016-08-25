@@ -1,0 +1,23 @@
+{
+  "name": "link-filter",
+  "version": "1.0.0",
+  "description": "Tool for filtering RSS feeds and other sources of links",
+  "main": "main.js",
+  "scripts": {
+    "run": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveMBush/LinkFilter.git"
+  },
+  "author": "DaveMBush",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaveMBush/LinkFilter/issues"
+  },
+  "homepage": "https://github.com/DaveMBush/LinkFilter#readme",
+  "devDependencies": {
+    "electron": "^1.3.4",
+    "typings": "^1.3.2"
+  }
+}
