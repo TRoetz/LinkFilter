@@ -1,4 +1,4 @@
-import { app } from 'electron';
+import { app,BrowserWindow } from 'electron';
 import Main from './Main';
 
-(new Main(app)).main();
+Main.main(app,BrowserWindow);

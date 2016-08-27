@@ -1,28 +1,31 @@
 import {BrowserWindow} from 'electron';
 export default class Main {
-    constructor(private application: Electron.App){}
-    mainWindow: Electron.BrowserWindow;
-    onWindowAllClosed() {
+    static mainWindow: Electron.BrowserWindow;
+    static application: Electron.App;
+    static BrowserWindow;
+    static onWindowAllClosed() {
         if (process.platform !== 'darwin')
-            this.application.quit();
+            Main.application.quit();
     }
-    onClose(){
+    static onClose(){
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        this.mainWindow = null;
+        Main.mainWindow = null;
     }
-    onReady(){
+    static onReady(){
         // this is a dependency we will have to live with
         // because we can't create BrowserWindow until
         // onReady fires.
-        this.mainWindow = new BrowserWindow({width: 800, height: 600})
-        this.mainWindow.loadURL('file://' + __dirname + '/index.html');
-        this.mainWindow.on('closed', this.onClose);
+        Main.mainWindow = new Main.BrowserWindow({width: 800, height: 600})
+        Main.mainWindow.loadURL('file://' + __dirname + '/index.html');
+        Main.mainWindow.on('closed', Main.onClose);
     }
-    main(){
-        this.application.on('window-all-closed',this.onWindowAllClosed);
-        this.application.on('ready', this.onReady);
+    static main(app: Electron.App,browserWindow: typeof BrowserWindow){
+        Main.BrowserWindow = browserWindow;
+        Main.application = app;
+        Main.application.on('window-all-closed',Main.onWindowAllClosed);
+        Main.application.on('ready', Main.onReady);
     }
 }
 
