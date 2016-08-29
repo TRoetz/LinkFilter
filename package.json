@@ -2,9 +2,11 @@
   "name": "link-filter",
   "version": "1.0.0",
   "description": "Tool for filtering RSS feeds and other sources of links",
-  "main": "main.js",
+  "main": "src/app.js",
   "scripts": {
-    "run": "electron src/app.js"
+    "run": "electron src/app.js",
+    "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
+    "package": "electron-packager . --all --prune"
   },
   "repository": {
     "type": "git",

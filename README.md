@@ -11,6 +11,4 @@ Once you've forked/cloned the project,
 
 `npm install`
 
-`npm install -g typings`
-
-`npm install -g electron`
+`npm run-script post-npm-install`
