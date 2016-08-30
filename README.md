@@ -12,3 +12,10 @@ Once you've forked/cloned the project,
 `npm install`
 
 `npm run-script post-npm-install`
+
+To create executables
+
+`npm run-script package`
+
+This will create `link-filter-*` directories which will hold the executables for the
+various platforms.
