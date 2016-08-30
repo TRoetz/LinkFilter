@@ -6,7 +6,7 @@
   "scripts": {
     "run": "electron src/app.js",
     "postInstall": "typings install && npm install electron -g && npm install electron-packager -g",
-    "package": "electron-packager . --all --prune"
+    "package": "electron-packager . --all --prune --overwrite"
   },
   "repository": {
     "type": "git",
